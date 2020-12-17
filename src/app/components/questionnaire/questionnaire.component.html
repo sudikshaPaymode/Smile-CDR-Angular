@@ -1,1 +1,123 @@
-<p>questionnaire works!</p>
+<div class="questionnaire-container">
+
+    <form [formGroup]="questionnaireFormGroup">
+        <label class="questionnaire-heading">Questionnaire</label>
+
+        <div class="col-md-4 form-group">
+            <label class="questionnaire-label">Do you have allergies?  </label>
+            <input type="text" class="form-control"  formControlName="allergy" maxlength="3">
+        </div>
+
+        <div>
+            <label class="questionnaire-heading">General questions</label>
+        </div>
+        <div class="col-md-4 form-group">
+            <label class="questionnaire-label">What is your gender?  </label>
+            <label>
+                <input type="radio" value="Male" formControlName="gender">
+                <span>male</span>
+            </label>
+            <label>
+                <input type="radio" value="Female" formControlName="gender">
+                <span>female</span>
+            </label>
+        </div>
+
+        <div class="col-md-4 form-group">
+            <label class="questionnaire-label">What is your date of birth?</label>
+            <input type="date" class="form-control" formControlName="dateOfBirth" min="1992-12-17" max="2020-12-31">
+
+        </div>
+
+        <div class="col-md-4 form-group" >
+            <label class="questionnaire-label">What is your country of birth?</label>
+            <input type="string" class="form-control"   minlength="20" formControlName="countryOfBirth" required>
+        </div>
+
+        <div class="col-md- form-group">
+            <label class="questionnaire-label">What is your marital status?</label>
+            <input type="checkbox" formControlName="maritalStatus" (ngModelChange)="getMaritalStatus()">
+        </div>
+
+        <label class="questionnaire-heading">Intoxications</label>
+        <div class="col-md-4 form-group">
+            <label class="questionnaire-label">Do you smoke?</label>
+            <label>
+                <input type="radio" value="Yes" formControlName="smokingHabit">
+                <span>Yes</span>
+            </label>
+            <label>
+                <input type="radio" value="No" formControlName="smokingHabit">
+                <span>No</span>
+            </label>
+        </div>
+
+        <div class="col-md-4 form-group">
+            <label class="questionnaire-label">Do you drink alcohol?</label>
+            <label>
+                <input type="radio" value="Yes" formControlName="drinkingHabit">
+                <span>Yes</span>
+            </label>
+            <label>
+                <input type="radio" value="No" formControlName="drinkingHabit">
+                <span>No</span>
+            </label>
+        </div>
+      <button type="submit" [disabled]="!questionnaireFormGroup.valid"
+              class="btn-btn-success" ng-submit="onsubmit()">Save</button>
+
+        <div class="questionnaire-response">
+           <div class="questionnaire-heading">Questionnaire Response:</div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Do you have allergies: </label>
+                    <span>{{getFormControl('allergy').value}}</span>
+                </div>
+            </div>
+
+            <label>General questions</label>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Gender </label>
+                    <span>{{getFormControl('gender').value}}</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Date of birth:  </label>
+                    <span>{{getFormControl('dateOfBirth').value}}</span>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Country of birth:  </label>
+                    <span>{{getFormControl('countryOfBirth').value}}</span>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Marital status:  </label>
+                    <span>{{maritalStatus}}</span>
+                </div>
+            </div>
+
+            <label>Intoxications</label>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Do you smoke:  </label>
+                    <span>{{getFormControl('smokingHabit').value}}</span>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Do you drink alcohol:  </label>
+                    <span>{{getFormControl('drinkingHabit').value}}</span>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>

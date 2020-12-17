@@ -5,17 +5,17 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ApiService } from './services/api-service.service';
-import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
+import {QuestionnaireModule} from './components/questionnaire/questionnaire.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    QuestionnaireComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    QuestionnaireModule
   ],
   providers: [
     ApiService

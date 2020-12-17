@@ -1,0 +1,23 @@
+.questionnaire-container{
+  width:90%;
+  border: 1px solid;
+  height:900px;
+  padding: 20px;
+  margin:10px 10px;
+
+  .questionnaire-response{
+    width:75%;
+    border: 2px solid lightblue;
+    padding:20px;
+    margin-top: 30px;
+  }
+
+  .questionnaire-label {
+    font-size: 1em;
+  }
+
+  .questionnaire-heading {
+    font-size: 1.20em;
+    font-weight: bold;
+  }
+}
