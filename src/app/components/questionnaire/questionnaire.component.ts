@@ -20,13 +20,13 @@ export class QuestionnaireComponent implements OnInit {
   ngOnInit(): void {
     //this.getList();
     this.questionnaireFormGroup = new FormGroup({
-      allergy: new FormControl(),
-      gender: new FormControl(),
-      dateOfBirth: new FormControl(),
-      countryOfBirth: new FormControl(),
-      maritalStatus: new FormControl(),
-      smokingHabit: new FormControl(),
-      drinkingHabit: new FormControl()
+      allergy: new FormControl('',[Validators.required,Validators.minLength(3)]),
+      gender: new FormControl('',[Validators.required]),
+      dateOfBirth: new FormControl('',[Validators.required]),
+      countryOfBirth: new FormControl('',[Validators.required]),
+      maritalStatus: new FormControl('',[Validators.required]),
+      smokingHabit: new FormControl('',[Validators.required]),
+      drinkingHabit: new FormControl('',[Validators.required])
     });
   }
 
@@ -42,5 +42,8 @@ export class QuestionnaireComponent implements OnInit {
     this.maritalStatus= this.getFormControl('maritalStatus').value ? 'Married' :'Unmarried';
   }
 
+  public onsubmit():void{
+   // console.log("save");
 
+  }
 }

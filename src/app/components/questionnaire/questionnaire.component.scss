@@ -12,12 +12,33 @@
     margin-top: 30px;
   }
 
-  .questionnaire-label {
+  .allergy-question-label{
     font-size: 1em;
+    font-weight: bold ;
+  }
+  .questionnaire-label {
+    padding:20px;
+    font-size: 1em;
+    font-weight: bold;
   }
 
   .questionnaire-heading {
-    font-size: 1.20em;
+    font-size: 1.30em;
     font-weight: bold;
+  }
+
+  .questionnaire-heading1{
+    font-size: 1.10em;
+    font-weight: bold;
+  }
+
+  .btn-btn-success {
+    padding: 7px 7px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: medium;
   }
 }
