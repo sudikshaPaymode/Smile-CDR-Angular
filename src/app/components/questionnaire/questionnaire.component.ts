@@ -12,7 +12,7 @@ import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/form
 export class QuestionnaireComponent implements OnInit {
 
   public questionnaireData: any = {};
-  public maritalStatus: string = '';
+  // public maritalStatus: string = '';
   public questionnaireFormGroup: FormGroup;
 
   //constructor(private apiService: ApiService) { }
@@ -20,7 +20,7 @@ export class QuestionnaireComponent implements OnInit {
   ngOnInit(): void {
     //this.getList();
     this.questionnaireFormGroup = new FormGroup({
-      allergy: new FormControl('',[Validators.required,Validators.minLength(3)]),
+      allergy: new FormControl('',[Validators.required,Validators.minLength(2)]),
       gender: new FormControl('',[Validators.required]),
       dateOfBirth: new FormControl('',[Validators.required]),
       countryOfBirth: new FormControl('',[Validators.required]),
@@ -38,9 +38,10 @@ export class QuestionnaireComponent implements OnInit {
     //this.questionnaireData= this.apiService.getListOfQuestionnaire();
   //}
 
-  public getMaritalStatus(): void {
-    this.maritalStatus= this.getFormControl('maritalStatus').value ? 'Married' :'Unmarried';
-  }
+  // public getMaritalStatus(): void {
+  //   this.maritalStatus= this.getFormControl('maritalStatus').value ? 'Married' :'Unmarried';
+  // }
+
 
   public onsubmit():void{
    // console.log("save");

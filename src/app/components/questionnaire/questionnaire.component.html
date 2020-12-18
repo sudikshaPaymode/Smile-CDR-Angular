@@ -29,7 +29,7 @@
 
         <div class="col-md-4 form-group">
             <label class="questionnaire-label">2:2 What is your date of birth?  </label>
-            <input type="date" class="form-control" formControlName="dateOfBirth" min="1992-12-17" max="2020-12-31">
+            <input type="date" class="form-control" formControlName="dateOfBirth" min="2002-12-17" max="2020-12-31">
 
         </div>
 
@@ -40,7 +40,15 @@
 
         <div class="col-md- form-group">
             <label class="questionnaire-label">2:4 What is your marital status?  </label>
-            <input type="checkbox" formControlName="maritalStatus" (ngModelChange)="getMaritalStatus()">
+            <label>
+                <input type="radio" value="Married" formControlName="maritalStatus">
+                <span>Married</span>
+            </label>
+            <label>
+                <input type="radio" value="UnMarried" formControlName="maritalStatus">
+                <span>UnMarried</span>
+            </label>
+<!--            <input type="checkbox" formControlName="maritalStatus" (ngModelChange)="getMaritalStatus()">-->
         </div>
         <br/>
 
@@ -106,7 +114,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label class="questionnaire-label">Marital status:  </label>
-                    <span>{{maritalStatus}}</span>
+                    <span>{{getFormControl('maritalStatus').value}}</span>
                 </div>
             </div>
 
